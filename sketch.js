@@ -15,7 +15,7 @@ let food;
 
 
 function setup() {
-  createCanvas(1000, 600);
+  createCanvas((windowWidth*0.66), (windowHeight*0.4));
 
   s = new Snake();
   pickLocation();
