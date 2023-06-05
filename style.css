@@ -17,6 +17,10 @@ ul{
     list-style-type: none;
 }
 
+footer{
+	margin-bottom: 2%;
+}
+
 /*colores*/
 .whitebg{
 	background-color: #EFEFEF;
