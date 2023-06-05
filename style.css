@@ -49,6 +49,18 @@ footer h5 {
 	background-color: #363636;
 }
 
+/*sigue*/
+
+.contenidocentrado{
+	margin-top: 3vh;
+	margin-bottom: 3vh;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.centro{
+	text-align: center;
+}
 
 *{
   padding: 0;
