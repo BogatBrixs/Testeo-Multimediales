@@ -7,12 +7,17 @@ let s;
 //escala el tamaño de la grilla/matriz y tamaño de los objetos
 let scl = 25;
 
-
 let food;
 
+let input_nombre, input_mail, input_dni, button;
 
+let estado = 0;
 
+let imgjugar;
 
+function preload() {
+  imgjugar = loadImage('img/inicio.jpg');
+}
 
 function setup() {
   createCanvas(800, 600);
@@ -40,24 +45,27 @@ function pickLocation() {
   s.total++; 
 }*/
 
-
-
 function draw() {
-  background(51);
-  
-  //si se come la fruta, se genera una nueva posicion
-  if (s.eat(food)) {
-    pickLocation();
+  switch(estado){
+    case 0:
+      image(imgjugar, 0, 0);
+      
+      break;
+    case 2:
+        background(51);
+        //si se come la fruta, se genera una nueva posicion
+        if (s.eat(food)) {
+          pickLocation();
+        }
+        //orden de funciones en la serpiente
+        s.death();
+        s.update();
+        s.show();
+        //comida
+        fill(255, 0, 100);
+        rect(food.x, food.y, scl, scl);
+      break;
   }
-
-  //orden de funciones en la serpiente
-  s.death();
-  s.update();
-  s.show();
-  
-  //comida
-  fill(255, 0, 100);
-  rect(food.x, food.y, scl, scl);
 }
 
 
