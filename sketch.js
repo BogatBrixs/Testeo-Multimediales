@@ -49,6 +49,8 @@ function draw() {
   switch(estado){
     case 0:
       image(imgjugar, 0, 0);
+      break;
+    case 1:
       
       break;
     case 2:
@@ -79,5 +81,11 @@ function keyPressed() {
     s.dir(1, 0);
   } else if (keyCode === LEFT_ARROW) {
     s.dir(-1, 0);
+  }
+}
+
+function mouseReleased() {
+  if (estado==0 && (mouseX>264 && mouseX<537 && mouseY>427 && mouseY<512)){
+    estado=1;
   }
 }
