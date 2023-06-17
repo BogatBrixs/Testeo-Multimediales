@@ -9,23 +9,24 @@ let scl = 25;
 
 let food;
 
-let input_nombre, input_mail, input_dni, button;
+let input_nombre, input_mail, input_pass, button;
 
 let estado = 0;
 
-let imgjugar;
+let imgjugar, gradiente;
 
 function preload() {
   imgjugar = loadImage('img/inicio.jpg');
+  gradiente = loadImage('img/gradiente.jpg');
 }
 
 function setup() {
   createCanvas(800, 600);
+  image(imgjugar, 0, 0);
+  
   s = new Snake();
   pickLocation();
-
   frameRate(10);
-
 }
 
 
@@ -47,12 +48,6 @@ function pickLocation() {
 
 function draw() {
   switch(estado){
-    case 0:
-      image(imgjugar, 0, 0);
-      break;
-    case 1:
-      
-      break;
     case 2:
         background(51);
         //si se come la fruta, se genera una nueva posicion
@@ -86,6 +81,29 @@ function keyPressed() {
 
 function mouseReleased() {
   if (estado==0 && (mouseX>264 && mouseX<537 && mouseY>427 && mouseY<512)){
-    estado=1;
+      estado=1;
+      image(gradiente, 0, 0);
+    fill(0);
+    text('Nombre Completo:', 300, 150);
+      input_nombre = createInput('');
+      input_nombre.position(300, 160);
+    text('Email:', 300, 245);
+      input_mail = createInput('');
+      input_mail.position(300, 255);
+    text('Contraseña:', 300, 345);
+      input_pass = createInput('', 'password');
+      input_pass.position(300, 355);
+      button = createButton('Registrarse / Ingresar');
+      button.position(300, 410);
+      button.mousePressed(estado2);
   }
+}
+
+function estado2() {
+  alert("AL INGRESAR AL JUEGO ACEPTÁS LAS SIGUIENTES BASES Y CONDICIONES:")
+  estado = 2;
+  input_nombre.hide();
+  input_pass.hide();
+  input_mail.hide();
+  button.hide();
 }
