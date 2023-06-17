@@ -95,9 +95,29 @@ function mouseReleased() {
       input_pass.position(300, 355);
       button = createButton('Registrarse / Ingresar');
       button.position(300, 410);
-      button.mousePressed(estado2);
+      button.mousePressed(validarFormulario);
   }
 }
+
+function validarFormulario() {
+        
+        let emailrefencia = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+		let email = input_mail.value();
+  
+		if (input_nombre.value()==''){
+			alert("El nombre completo es obligatorio.")
+			return false;
+		}else if( !(emailrefencia.test(email)) ) {
+			alert("Por favor ingrese una dirección de correo válida.")
+			return false;
+		}else if (input_pass.value()==''){
+			alert("La contraseña es obligatoria.")
+			return false;
+		}else{
+          estado2();
+        }
+
+	}
 
 function estado2() {
   alert("AL INGRESAR AL JUEGO ACEPTÁS LAS SIGUIENTES BASES Y CONDICIONES:")
