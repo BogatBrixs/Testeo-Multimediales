@@ -84,7 +84,7 @@ function mouseReleased() {
       estado=1;
       image(gradiente, 0, 0);
     fill(0);
-    text('Nombre Completo:', 300, 150);
+    text('Nombre Completo:', int(width/2,666), 150);
       input_nombre = createInput('');
       input_nombre.position(300, 160);
     text('Email:', 300, 245);
