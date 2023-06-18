@@ -64,3 +64,10 @@ footer h4{
 .blackbg{
 	background-color: #363636;
 }
+
+#sketchHolder {
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+}
