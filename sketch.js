@@ -12,6 +12,11 @@ let food;
 let input_nombre, input_mail, input_pass, button;
 
 let estado = 0;
+let cant_comida = 0;
+let cant_anterior = 0;
+
+//usamos esta variable para el momento final
+let momentocamara = 40;
 
 let imgjugar, gradiente;
 
@@ -28,11 +33,20 @@ function setup() {
   s = new Snake();
   pickLocation();
   frameRate(10);
+
+  capture = createCapture(VIDEO);
+  capture.size(240, 240);
+  capture.hide();
 }
 
 
 //-------DETECTAR LA FRUTA----------//
 function pickLocation() {
+  cant_comida++;
+  if(cant_comida>=momentocamara){ 
+    scl = 100;
+  }
+  
   let cols = floor(width/scl);
   let rows = floor(height/scl);
 
@@ -48,8 +62,7 @@ function pickLocation() {
 }*/
 
 function draw() {
-  switch(estado){
-    case 2:
+  if(estado==2){
         background(51);
         //si se come la fruta, se genera una nueva posicion
         if (s.eat(food)) {
@@ -59,12 +72,18 @@ function draw() {
         s.death();
         s.update();
         s.show();
-        //comida
+        //comida normal
+      if(cant_comida<momentocamara){
         fill(255, 0, 100);
         rect(food.x, food.y, scl, scl);
-      break;
+        } else{ //comida cámara 
+        frameRate(5);
+        image(capture, food.x, food.y, scl, scl);
+        }
+      basesypublicidad();
   }
 }
+
 
 
 //----MOVIMIENTO----//
@@ -131,4 +150,27 @@ function estado2() {
   input_pass.hide();
   input_mail.hide();
   button.hide();
+}
+
+function basesypublicidad(){
+  
+  //ESTO ES PARA LOS ALERTS UNICAMENTE.
+  if(cant_comida != cant_anterior){
+    switch(cant_comida){
+      
+      case 4:
+        alert("Hemos actualizado las bases y condiciones: si quieres seguir jugando, a partir de este momento aceptas que enviemos promociones y actualizaciones a tu email!");
+      break;
+      
+      case 7:
+        alert("Hemos actualizado las bases y condiciones: a partir de este momento podremos probar tu email y contraseña en otras páginas con el fin de conocerte mejor y enviarte mejores promociones.");
+      break;
+      
+      case 9:
+        alert("Wow, no nos esperabamos que te gusten esas cosas... pero cada loco con su tema.");
+      break;
+    
+    }
+    cant_anterior = cant_comida;
+  }
 }
