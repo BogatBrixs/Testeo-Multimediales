@@ -87,18 +87,18 @@ function mouseReleased() {
     fill(0);
     text('Nombre Completo:', 300, 150);
       input_nombre = createInput('');
-      input_nombre.position(300, 160, 'relative');
+      input_nombre.position(300, 160);
 	input_nombre.parent("sketchHolder");
     text('Email:', 300, 245);
       input_mail = createInput('');
-      input_mail.position(300, 255, 'relative');
+      input_mail.position(300, 255);
 	  input_mail.parent("sketchHolder");
     text('Contraseña:', 300, 345);
       input_pass = createInput('', 'password');
-      input_pass.position(300, 355, 'relative');
+      input_pass.position(300, 355);
 	  input_pass.parent("sketchHolder");
       button = createButton('Registrarse / Ingresar');
-      button.position(300, 410, 'relative');
+      button.position(300, 410);
 	  button.parent("sketchHolder");
       button.mousePressed(validarFormulario);
   }
