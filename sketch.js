@@ -21,7 +21,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(800, 600);
+  var cnv = createCanvas(800, 600);
+  cnv.parent("sketchHolder");
   image(imgjugar, 0, 0);
   
   s = new Snake();
@@ -87,14 +88,18 @@ function mouseReleased() {
     text('Nombre Completo:', 300, 150);
       input_nombre = createInput('');
       input_nombre.position(300, 160, 'relative');
+	input_nombre.parent("sketchHolder");
     text('Email:', 300, 245);
       input_mail = createInput('');
       input_mail.position(300, 255, 'relative');
+	  input_mail.parent("sketchHolder");
     text('Contraseña:', 300, 345);
       input_pass = createInput('', 'password');
       input_pass.position(300, 355, 'relative');
+	  input_pass.parent("sketchHolder");
       button = createButton('Registrarse / Ingresar');
       button.position(300, 410, 'relative');
+	  button.parent("sketchHolder");
       button.mousePressed(validarFormulario);
   }
 }
