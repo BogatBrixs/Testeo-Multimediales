@@ -1,6 +1,4 @@
-
 class Snake{
-
 
     x = 0;
     y = 0;
@@ -35,7 +33,6 @@ class Snake{
             let pos = this.tail[i];
             let d = dist(this.x, this.y, pos.x, pos.y);
             if (d < 1) {
-
                 this.total = 0;
                 this.tail = [];
             }
@@ -56,12 +53,32 @@ class Snake{
 
       this.x += this.xspeed*scl;
       this.y += this.yspeed*scl;
+      
+      // ACOMODAMOS LA GRILLA CUANDO CAMBIA EL SCL
+      if(scl==100 && (this.x%100!=0 || this.y%100!=0)){
+        if(this.x%100!=0){
+            if(this.x%100==75){
+              this.x+=25;
+            }else if(this.x%100==25){
+              this.x-=25;
+            }else if(this.x%100==50){
+              this.x+=50;
+            }
+        }
+        if(this.y%100!=0){
+            if(this.y%100==75){
+              this.y+=25;
+            }else if(this.y%100==25){
+              this.y-=25;
+            }else if(this.y%100==50){
+              this.y+=50;
+            }
+        }
+      }
         
-
       //limitar el movimiento hasta los bordes
       this.x = constrain(this.x, 0, width-scl);
       this.y = constrain(this.y, 0, height-scl);
-
 
     }
   
