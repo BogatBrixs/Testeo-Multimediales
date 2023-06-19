@@ -100,6 +100,7 @@ function keyPressed() {
 }
 
 function mouseReleased() {
+  //Formulario
   if (estado==0 && (mouseX>264 && mouseX<537 && mouseY>427 && mouseY<512)){
       estado=1;
       image(gradiente, 0, 0);
@@ -107,41 +108,41 @@ function mouseReleased() {
     text('Nombre Completo:', 300, 150);
       input_nombre = createInput('');
       input_nombre.position(314, 160);
-	input_nombre.parent("sketchHolder");
+  input_nombre.parent("sketchHolder");
     text('Email:', 300, 245);
       input_mail = createInput('');
       input_mail.position(314, 255);
-	  input_mail.parent("sketchHolder");
+    input_mail.parent("sketchHolder");
     text('Contraseña:', 300, 345);
       input_pass = createInput('', 'password');
       input_pass.position(314, 355);
-	  input_pass.parent("sketchHolder");
+    input_pass.parent("sketchHolder");
       button = createButton('Registrarse / Ingresar');
       button.position(314, 410);
-	  button.parent("sketchHolder");
+    button.parent("sketchHolder");
       button.mousePressed(validarFormulario);
   }
 }
 
 function validarFormulario() {
-        
-        let emailrefencia = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
-		let email = input_mail.value();
+        //ESTO ESTÁ COMENTADO PARA QUE NO SEA NECESARIO COMPLETAR EL FORMULARIO MIENTRAS PROBAMOS COSAS.
+   /*     let emailrefencia = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+    let email = input_mail.value();
   
-		if (input_nombre.value()==''){
-			alert("El nombre completo es obligatorio.")
-			return false;
-		}else if( !(emailrefencia.test(email)) ) {
-			alert("Por favor ingrese una dirección de correo válida.")
-			return false;
-		}else if (input_pass.value()==''){
-			alert("La contraseña es obligatoria.")
-			return false;
-		}else{
+    if (input_nombre.value()==''){
+      alert("El nombre completo es obligatorio.")
+      return false;
+    }else if( !(emailrefencia.test(email)) ) {
+      alert("Por favor ingrese una dirección de correo válida.")
+      return false;
+    }else if (input_pass.value()==''){
+      alert("La contraseña es obligatoria.")
+      return false;
+    }else{*/
           estado2();
-        }
+       // }
 
-	}
+  }
 
 function estado2() {
   alert("AL INGRESAR AL JUEGO ACEPTÁS LAS SIGUIENTES BASES Y CONDICIONES:")
@@ -154,11 +155,13 @@ function estado2() {
 
 function basesypublicidad(){
   
-  //ESTO ES PARA LOS ALERTS UNICAMENTE.
+  //ESTO ES PARA LOS ALERTS (CAMBIOS EN LAS BASES Y CONDICIONES) Y PARA MOSTRAR LAS PUBLICIDADES.
   if(cant_comida != cant_anterior){
     switch(cant_comida){
       
       case 4:
+                document.getElementById("pubreal2").style.visibility = "visible";
+
         alert("Hemos actualizado las bases y condiciones: si quieres seguir jugando, a partir de este momento aceptas que enviemos promociones y actualizaciones a tu email!");
       break;
       
