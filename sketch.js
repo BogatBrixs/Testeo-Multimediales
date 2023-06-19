@@ -23,6 +23,7 @@ let imgjugar, gradiente;
 function preload() {
   imgjugar = loadImage('img/inicio.jpg');
   gradiente = loadImage('img/gradiente.jpg');
+  perra = loadImage('img/perra.png');
 }
 
 function setup() {
@@ -80,7 +81,16 @@ function draw() {
         frameRate(5);
         image(capture, food.x, food.y, scl, scl);
         }
-      basesypublicidad();
+        basesypublicidad();
+        if(cant_comida == 60){
+          estado = 3;
+        }
+    }else if(estado==3){
+        background(230);
+        frameRate(30);
+        image(capture, 0, 0, 462, 332);
+        image(perra, 0, 0);
+
   }
 }
 
