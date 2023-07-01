@@ -36,7 +36,7 @@ function setup() {
   frameRate(10);
 
   capture = createCapture(VIDEO);
-  capture.size(240, 240);
+  capture.size(462, 332);
   capture.hide();
 }
 
@@ -88,7 +88,7 @@ function draw() {
     }else if(estado==3){
         background(230);
         frameRate(30);
-        image(capture, 0, 0, 462, 332);
+        image(hold, 0, 0, 462, 332);
         image(perra, 0, 0);
         fill(80, 0, 178);
         textStyle(BOLD);
@@ -277,10 +277,11 @@ function basesypublicidad(){
         document.getElementById("pub15").style.visibility = "visible;"   
         document.getElementById("pub16").style.visibility = "visible;"
         document.getElementById("pub17").style.visibility = "visible;"
-
+        hold = capture.get(0, 0, 462, 332);
         alert("adjkahdoiwqjqflkafjspfkasd asjdashkjd haslkdjadwq pdjaslkd jadowj asdkjahf")
       break;
     }
     cant_anterior = cant_comida;
   }
 }
+
