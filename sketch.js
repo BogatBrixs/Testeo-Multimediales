@@ -16,7 +16,7 @@ let cant_comida = 0;
 let cant_anterior = 0;
 
 //usamos esta variable para el momento final
-let momentocamara = 40;
+let momentocamara = 15;
 
 let imgjugar, gradiente;
 
@@ -64,7 +64,7 @@ function pickLocation() {
 
 function draw() {
   if(estado==2){
-        background(51);
+        background(188, 245, 66);
         //si se come la fruta, se genera una nueva posicion
         if (s.eat(food)) {
           pickLocation();
@@ -82,7 +82,7 @@ function draw() {
         image(capture, food.x, food.y, scl, scl);
         }
         basesypublicidad();
-        if(cant_comida == 60){
+        if(cant_comida == 20){
           estado = 3;
         }
     }else if(estado==3){
@@ -136,7 +136,7 @@ function mouseReleased() {
 
 function validarFormulario() {
         //ESTO ESTÁ COMENTADO PARA QUE NO SEA NECESARIO COMPLETAR EL FORMULARIO MIENTRAS PROBAMOS COSAS.
-   /*     let emailrefencia = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+        let emailrefencia = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
     let email = input_mail.value();
   
     if (input_nombre.value()==''){
@@ -148,9 +148,9 @@ function validarFormulario() {
     }else if (input_pass.value()==''){
       alert("La contraseña es obligatoria.")
       return false;
-    }else{*/
+    }else{
           estado2();
-       // }
+       }
 
   }
 
@@ -171,19 +171,113 @@ function basesypublicidad(){
       
       case 4:
                 document.getElementById("pubreal2").style.visibility = "visible";
+                document.getElementById("pub1").style.visibility = "visible";
 
         alert("Hemos actualizado las bases y condiciones: si quieres seguir jugando, a partir de este momento aceptas que enviemos promociones y actualizaciones a tu email!");
       break;
       
       case 7:
+                document.getElementById("pub2").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub4").style.visibility = "visible";
+
         alert("Hemos actualizado las bases y condiciones: a partir de este momento podremos probar tu email y contraseña en otras páginas con el fin de conocerte mejor y enviarte mejores promociones.");
       break;
-      
+
       case 9:
+
+      document.getElementById("pub5").style.visibility = "visible";
+      document.getElementById("pub6").style.visibility = "visible";
+      document.getElementById("pub7").style.visibility = "visible";
         alert("Wow, no nos esperabamos que te gusten esas cosas... pero cada loco con su tema.");
       break;
     
+      case 11:
+                document.getElementById("pub8").style.visibility = "visible";
+                document.getElementById("pub9").style.visibility = "visible";
+                document.getElementById("pub10").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub5").style.visibility = "visible";
+
+
+        alert("Uy, se me cayó jiji :P")
+      break;
+
+      case 12:
+
+                document.getElementById("pub2").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub6").style.visibility = "visible";
+                document.getElementById("pub7").style.visibility = "visible";
+      break;
+
+      case 14:
+                document.getElementById("pub11").style.visibility = "visible;"
+                document.getElementById("pub12").style.visibility = "visible;"
+                document.getElementById("pub13").style.visibility = "visible;"
+                document.getElementById("pub14").style.visibility = "visible;"
+                document.getElementById("pub15").style.visibility = "visible;"
+
+        alert("TE GANASTE UN AUTO 0KM, Y TE SACAMOS LA PLATA DEL BANCOO :DDDDDD")
+      break;
+
+      case 16:
+        document.getElementById("pub11").style.visibility = "visible;"
+        document.getElementById("pub12").style.visibility = "visible;"
+        document.getElementById("pub2").style.visibility = "visible";
+        document.getElementById("pubreal2").style.visibility = "visible";
+        document.getElementById("pub1").style.visibility = "visible";
+
+      break;
+
+      case 19:
+        document.getElementById("pub11").style.visibility = "visible;"
+        document.getElementById("pub12").style.visibility = "visible;"
+        document.getElementById("pub2").style.visibility = "visible";
+        document.getElementById("pubreal2").style.visibility = "visible";
+        document.getElementById("pub1").style.visibility = "visible";
+        document.getElementById("pub8").style.visibility = "visible";
+                document.getElementById("pub9").style.visibility = "visible";
+                document.getElementById("pub10").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub5").style.visibility = "visible";
+
+        alert(";P")
+        alert(";P")
+        alert(";P")
+        alert(";P")
+
+      break;
+
+      case 20:
+        document.getElementById("pub11").style.visibility = "visible;"
+        document.getElementById("pub12").style.visibility = "visible;"
+        document.getElementById("pub2").style.visibility = "visible";
+        document.getElementById("pubreal2").style.visibility = "visible";
+        document.getElementById("pub1").style.visibility = "visible";
+        document.getElementById("pub8").style.visibility = "visible";
+                document.getElementById("pub9").style.visibility = "visible";
+                document.getElementById("pub10").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub5").style.visibility = "visible";
+                document.getElementById("pub8").style.visibility = "visible";
+                document.getElementById("pub9").style.visibility = "visible";
+                document.getElementById("pub10").style.visibility = "visible";
+                document.getElementById("pub3").style.visibility = "visible";
+                document.getElementById("pub5").style.visibility = "visible";
+                document.getElementById("pub11").style.visibility = "visible;"
+                document.getElementById("pub12").style.visibility = "visible;"
+                document.getElementById("pub13").style.visibility = "visible;"
+                document.getElementById("pub14").style.visibility = "visible;"
+                document.getElementById("pub15").style.visibility = "visible;"
+                
+                document.getElementById("pub16").style.visibility = "visible;"
+                document.getElementById("pub17").style.visibility = "visible;"
+
+        alert("adjkahdoiwqjqflkafjspfkasd asjdashkjd haslkdjadwq pdjaslkd jadowj asdkjahf")
+      break;
     }
     cant_anterior = cant_comida;
   }
 }
+
