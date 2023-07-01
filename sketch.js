@@ -162,7 +162,7 @@ function validarFormulario() {
   }
 
 function estado2() {
-  alert("AL INGRESAR AL JUEGO ACEPTÁS LAS SIGUIENTES BASES Y CONDICIONES:")
+  alert("AL INGRESAR AL JUEGO ACEPTÁS LAS SIGUIENTES BASES Y CONDICIONES: Aceptación de los términos: Al acceder y utilizar este sitio web, se considera que el usuario ha leído, entendido y aceptado los siguientes términos y condiciones en su totalidad. Si no está de acuerdo con estos términos, se le solicita que no utilice el sitio web. El sitio web puede contener enlaces a sitios web de terceros. Estos enlaces se proporcionan únicamente con fines informativos y no implican ninguna asociación, respaldo o responsabilidad por parte del titular del sitio web sobre el contenido de dichos sitios enlazados. El acceso y uso de sitios web de terceros están sujetos a sus propios términos y condiciones. El titular del sitio web no se hace responsable de cualquier daño, pérdida o perjuicio directo o indirecto derivado del uso del sitio web, incluyendo pero no limitado a interrupciones en el acceso, virus informáticos, errores, omisiones, inexactitudes en los contenidos o cualquier otro fallo técnico o de otro tipo. El sitio web recopila y utiliza información personal del usuario de acuerdo con su política de privacidad. Al utilizar el sitio web, el usuario acepta y consiente el procesamiento de sus datos personales. El titular del sitio web se reserva el derecho de modificar, actualizar o eliminar estos términos y condiciones EN CUALQUIER MOMENTO.")
   estado = 2;
   input_nombre.hide();
   input_pass.hide();
@@ -214,6 +214,7 @@ function basesypublicidad(){
         document.getElementById("pub3").style.visibility = "visible";
         document.getElementById("pub6").style.visibility = "visible";
         document.getElementById("pub7").style.visibility = "visible";
+        alert("Al aceptar estas bases y condiciones, te convertís en fanático de San Lorenzo de Almagro, estarás condenado a una maldición eterna donde tu amor por el Ciclón se convertirá en una carga insostenible. Cada partido perdido y cada gol en contra te recordarán tu elección desafortunada.")
       break;
 
       case 28:
@@ -222,7 +223,7 @@ function basesypublicidad(){
         document.getElementById("pub13").style.visibility = "visible;"
         document.getElementById("pub14").style.visibility = "visible;"
         document.getElementById("pub15").style.visibility = "visible;"
-        alert("TE GANASTE UN AUTO 0KM")
+        alert("Podemos compartir tus datos con nuestros socios, como circos ambulantes y magos profesionales. Quién sabe, tal vez te encuentres en el escenario de un espectáculo sorpresa en algún momento.");
       break;
 
       case 29:
@@ -248,9 +249,8 @@ function basesypublicidad(){
         document.getElementById("pub5").style.visibility = "visible";
 
         alert(";P")
-        alert(";P")
-        alert(";P")
-        alert(";P")
+        alert("Tus datos serán utilizados en experimentos de dudosa ética y propósitos desconocidos. No te sorprendas si te conviertes en un conejillo de indias involuntario para nuestros avances científicos.")
+        alert("Al aceptar estas bases y condiciones, renuncias a cualquier control sobre tu información personal. Tus datos pueden ser utilizados en cualquier forma imaginable, desde la creación de clones digitales hasta la manipulación de tus pensamientos más íntimos.")
 
       break;
 
