@@ -73,7 +73,8 @@ function draw() {
         s.death();
         s.update();
         s.show();
-        //comida normal
+
+          //comida normal
       if(cant_comida<momentocamara){
         fill(255, 0, 100);
         rect(food.x, food.y, scl, scl);
@@ -81,7 +82,16 @@ function draw() {
         frameRate(5);
         image(capture, food.x, food.y, scl, scl);
         }
-        basesypublicidad();
+        basesypublicidad(); 
+
+        if (cant_comida == 10) {
+        frameRate(15);
+        }
+        
+        if (cant_comida == 20) {
+          frameRate(25);
+          }
+        
         if(cant_comida == 33){
           estado = 3;
         }
@@ -175,7 +185,7 @@ function basesypublicidad(){
   //ESTO ES PARA LOS ALERTS (CAMBIOS EN LAS BASES Y CONDICIONES) Y PARA MOSTRAR LAS PUBLICIDADES.
   if(cant_comida != cant_anterior){
     switch(cant_comida){
-      
+
       case 8:
           document.getElementById("pubreal2").style.visibility = "visible";
           document.getElementById("pub1").style.visibility = "visible";
@@ -183,7 +193,7 @@ function basesypublicidad(){
         alert("Hemos actualizado las bases y condiciones: si quieres seguir jugando, a partir de este momento aceptas que enviemos promociones y actualizaciones a tu email!");
       break;
       
-      case 14:
+      case 12:
           document.getElementById("pub2").style.visibility = "visible";
           document.getElementById("pub3").style.visibility = "visible";
           document.getElementById("pub4").style.visibility = "visible";
@@ -199,7 +209,7 @@ function basesypublicidad(){
         alert("Wow, no nos esperabamos que te gusten estas cosas... pero cada loco con su tema.");
       break;
     
-      case 21:
+      case 20:
         document.getElementById("pub8").style.visibility = "visible";
         document.getElementById("pub9").style.visibility = "visible";
         document.getElementById("pub10").style.visibility = "visible";
@@ -209,7 +219,7 @@ function basesypublicidad(){
         alert("NO TE PREOCUPES SI TU HOMEBANKING DICE QUE TE QUEDASTE SIN PLATA, LA ESTAMOS INVIRTIENDO PARA QUE SEAS MILLONARIO EN UNOS DÍAS!")
       break;
 
-      case 25:
+      case 24:
         document.getElementById("pub2").style.visibility = "visible";
         document.getElementById("pub3").style.visibility = "visible";
         document.getElementById("pub6").style.visibility = "visible";
@@ -217,7 +227,7 @@ function basesypublicidad(){
         alert("Al aceptar estas bases y condiciones, te convertís en fanático de San Lorenzo de Almagro, estarás condenado a una maldición eterna donde tu amor por el Ciclón se convertirá en una carga insostenible. Cada partido perdido y cada gol en contra te recordarán tu elección desafortunada.")
       break;
 
-      case 28:
+      case 27:
         document.getElementById("pub11").style.visibility = "visible;"
         document.getElementById("pub12").style.visibility = "visible;"
         document.getElementById("pub13").style.visibility = "visible;"
@@ -278,8 +288,8 @@ function basesypublicidad(){
         document.getElementById("pub16").style.visibility = "visible;"
         document.getElementById("pub17").style.visibility = "visible;"
         hold = capture.get(0, 0, 462, 332);
-        alert("adjkahdoiwqjqflkafjspfkasd asjdashkjd haslkdjadwq pdjaslkd jadowj asdkjahf")
-      break;
+        alert("adjkahdoiwqjqflkafjspfkasd asjdashkjd haslkdjadwq pdjaslkd jadowj asdkjahf") 
+        break;
     }
     cant_anterior = cant_comida;
   }
